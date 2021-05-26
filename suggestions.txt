@@ -1,0 +1,4 @@
+ - change name to "L & A REAL ESTATE LLC" or something different since original too long for mobile version (opionally change font size)
+ - decide whether small contact info on main page should be "position: fixed" or "position: absolute" (currently fixed)
+ - Decide whether or not the terms "Sale" and "Rent" work best for listings. Would "For sale"/"For rent" or "Buy"/"Rent" work better?
+ - More dramatic change of color when a listing icon is referenced on the map

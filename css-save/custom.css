@@ -1,0 +1,15 @@
+div.sneaky-contact {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    color: white;
+    text-align: left;
+    transition: opacity .1s ease;
+}
+
+
+
+.form-control {
+    border-radius: 0;
+    border: 1px solid #1d9b6c;
+}

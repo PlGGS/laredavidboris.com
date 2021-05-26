@@ -1,0 +1,10 @@
+input[type=image]:before {
+  content: "button";
+  display: block;
+  background: url(https://s.theoldreader.com/assets/ico-plus-369f50fa00968793b3c2e814f3e55de5.png);
+  max-width: 18px;
+  max-height: 18px;
+  width: 18px;
+  height: 18px; }
+
+/*# sourceMappingURL=mortgage-calc.css.map */

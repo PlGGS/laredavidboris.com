@@ -1,0 +1,708 @@
+@import 'variables.scss';
+
+// to hide elements selectively for browser sizes (used in span.l-info)
+@import 'bootstrap/mixins/_responsive-visibility.scss';
+@import 'bootstrap/_variables.scss';
+@import 'bootstrap/_responsive-utilities.scss';
+
+@import '_listings.scss';
+
+
+div.sneaky-contact {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    color: white;
+    text-align: left;
+    transition: opacity .1s ease;
+    font-size: 18px;
+
+    i {
+        color: desaturate(darken($primary, 20%), 50%);
+        margin-right: 16px;
+        width: 16px;
+    }
+}
+
+a.navbar-brand {
+    max-width: calc(100vw - 140px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+// BREADCRUMBS (the things that show the current page path)
+ol.breadcrumb {
+    background-color: unset;
+    border: 0;
+    padding: 1rem 0;
+}
+
+// LISTINGS
+
+/*div.test {
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 100px;
+     width: 100px;
+     z-index: 1000;
+     background-color: #1d9b6c;
+
+     @extend .hidden-sm !optional;
+     //@extend .visible- !optional;
+ }*/
+
+// ADMIN PANEL
+div.admin { 
+    margin-top: 150px;
+
+
+    div.a-listing {
+        background-color: white;
+        color: black;
+        margin: 4px 0;
+        cursor: pointer;
+        padding: 4px 16px;
+
+        i {
+            color: red;
+            font-weight: bold;
+            float: right;
+            font-size: 12px;
+            line-height: 22px;
+        }
+        b {
+            font-family: Monospace;
+            float: right;
+            display: inline-block;
+            margin-left: 8px;
+        }
+    }
+
+    div.a-upload {
+        width: 100%;
+        background-color: white;
+        margin-bottom: 16px;
+        margin-top: 4px;
+        padding: 8px 16px;
+        color: black;
+        display: none;
+        position: relative;
+
+        span.a-warning {
+            font-size: 12px;
+            color: #844;
+            display: block;
+        }
+        div.a-upload-loading {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(white, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+
+            div {
+                top: calc(50% - 15px);
+                display: block;
+                position: absolute;
+                left: calc(50% - 15px);
+                font-size: 30px;
+            }
+        }
+    }
+
+    div.a-toplinks {
+        text-align: right;
+
+        a {
+            color: $primary;
+            display: inline-block;
+            margin: -8px 0 32px 16px;
+        }
+    }
+}
+
+body.dragging, body.dragging * {
+    cursor: move !important;
+}
+
+.dragged {
+    position: absolute;
+    opacity: 0.5;
+    z-index: 2000;
+}
+
+ol.a-images {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        background-color: #fff;
+        margin: 4px 0 4px;
+        color: black;
+        height: 128px;
+        display: block;
+        position: relative;
+
+        img {
+            height: 100%;
+            float: left;
+        }
+
+        div.a-info {
+            float: left;
+            padding: 16px 0;
+
+            span {
+                display: block;
+                height: 24px;
+                margin-left: 32px;
+
+                &:nth-child(2n+1) {
+                    font-weight: bold;
+                    color: #666;
+                    margin-left: 16px;
+                }
+                &:nth-child(2n) {
+                    font-family: monospace;
+                }
+            }
+        }
+
+        div.a-delete {
+            color: red;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+    }
+
+    li.placeholder {
+        position: relative;
+        /** More li styles **/
+        border-bottom: 1px solid $primary;
+        height: 0px;
+
+        &:before {
+            position: absolute;
+            /** Define arrowhead **/
+            content:"▶";
+            line-height: 0px;
+            color: $primary;
+            margin-left: -10px;
+        }
+    }
+}
+ 
+// DOCUMENTS
+div.d-documents {
+    ol.d-docs {
+        margin: 0;
+        padding: 0 15px;
+        list-style-type: none;
+        height: calc(100vh - 200px);
+        overflow-y: scroll;
+        overflow-x: visible;
+        border: 1px solid white;
+
+        li {
+            margin: 0;
+            padding: 0;
+
+            &.placeholder {
+                position: relative;
+                border: 1px solid #1d6c9b;
+                height: 0px;
+
+                &:before {
+                    position: absolute;
+                    content:"▶";
+                    line-height: 0px;
+                    color: #1d6c9b;
+                    margin-left: -10px;                }
+            }
+        }
+    }
+
+    div.d-doc {
+        background-color: white;
+        width: 100%;
+        display: block;
+        height: 48px;
+        border-radius: 5px;
+        margin: 8px 0;
+
+
+        span.d-title {
+            line-height: 48px;
+            height: 48px;
+            display: inline-block;
+            width: calc(100% - 64px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: black;
+            text-align: left;
+            float: left;
+            padding-left: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: darken($primary, 30%);
+            }
+        }
+
+        i {
+            color: black;
+            line-height: 48px;
+            height: 48px;
+            float: right;
+            padding: 0 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                background-color: rgba(black, 0.1);
+                color: darken($primary, 30%);
+            }
+        }
+    }
+
+    h6 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    h6, p {
+        margin: 16px 0;
+        min-height: 16px;
+    }
+    p {
+        font-size: 16px;
+    }
+    hr {
+        margin: 32px 16px 0 !important;
+        padding-bottom: 32px;
+        border-color: rgba($primary, 1);
+    }
+
+    &.d-documents-admin {
+        height: calc(100vh - 200px);
+
+        h6, p, hr, div.d-doc {
+            cursor: move !important;
+        }
+    }
+
+    div.d-docs-area {
+        padding: 0;
+    }
+
+    .dragged {
+        position: absolute;
+        opacity: 0.5;
+        z-index: 2000;
+    }
+
+    div.d-elems {
+        div.d-add-elem {
+            border-bottom: 1px solid white;
+            width: 100%;
+            padding: 0 0 16px 0;
+
+            button {
+                margin-bottom: 4px;
+            }
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 8px;
+        }
+        div.d-upload {
+            width: 100%;
+            height: 72px;
+            background-color: white;
+            margin-top: 8px;
+            line-height: 48px;
+            color: black;
+            position: relative;
+
+            span {
+                height: 24px;
+                display: block;
+                line-height: 32px;
+                padding-left: 16px;
+                font-weight: bold;
+            }
+
+            input {
+                max-width: calc(100% - 72px);
+                padding-left: 16px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            button {
+                float: right;
+                border: 0;
+                background-color: rgba(black, 0.05);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(black, 0.1);
+                }
+            }
+
+            div.a-upload-loading {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(white, 0.5);
+                position: absolute;
+                top: 0;
+                left: 0;
+                text-align: center;
+    
+                div {
+                    top: calc(50% - 15px);
+                    display: block;
+                    position: absolute;
+                    left: calc(50% - 15px);
+                    font-size: 30px;
+                }
+            }
+        }
+        button.d-delete {
+            border-color: red;
+            color: red;
+            margin-top: 8px;
+            &:hover {
+                background-color: red;
+                color: black;
+            }
+        }
+        button.d-save {
+            float: right;
+            margin-top: 8px;
+
+        }
+    }
+}
+  
+
+// NAVBAR
+@keyframes navbar-dots-hover {
+    0% {line-height:35px}
+    70% {line-height: 20px;}
+    100% {line-height: 35px;}
+}
+
+@keyframes navbar-dots {
+    0% {top: -100px;}
+    50% {top: 0px;}
+    75% {top: -5px;}
+    100% {top: 0px;}
+}
+nav.navbar {
+    div.mobile-only-menu {
+        hr {
+            margin: 4px 0;
+            background-color: rgba(white, 0.4);
+        }
+    }
+
+    div.container {
+        position: relative;
+
+        .navbar-custom {
+            position: absolute;
+            right: 0px;
+            top: 50px;
+            background-color: black;
+            border: 1px solid #444;
+            overflow: hidden;
+            height: 0px;
+            opacity: 0;
+            transition: opacity 500ms ease, height 500ms ease;
+
+            ul {
+                flex-direction: column;
+                
+                li {
+                    padding: 0 8px;
+                }
+            }
+        }
+
+        li.navbar-custom-toggle-li {
+                height: 40px;
+        }
+
+        button.navbar-custom-toggle {
+            border: 0;
+            background-color: unset;
+            position: relative;
+            width: 48px;
+            height: 40px;
+            cursor: pointer;
+            outline: none;
+
+            span.navbar-dot {
+                display: inline-block;
+                animation-name: navbar-dots;
+                animation-duration: 2000ms;
+                animation-iteration-count: 1;
+                position: absolute;
+                top: 0;
+                left: 8px;
+            }
+            span.navbar-dot:nth-child(2) {
+                left: 20px;
+                animation-duration: 2100ms;
+
+                &::before {
+                    animation-duration: 550ms;
+                }
+            }
+            span.navbar-dot:nth-child(3) {
+                left: 32px;
+                animation-duration: 2200ms;
+
+                &::before {
+                    animation-duration: 600ms;
+                }
+            }
+            span.navbar-dot::before {
+                content: "•";
+                color: white;
+                font-size: 30px;
+                line-height: 35px;
+
+                animation-duration: 500ms;
+            }
+
+            &.hover {
+                span.navbar-dot::before {
+                    /* uncomment for ripple effect on hover */
+                    animation-name: navbar-dots-hover;
+                    animation-iteration-count: 1;
+                }
+            }
+        }
+    }
+}
+
+// ARTICLE
+section.article {
+    padding-top: 80px;
+
+    hr {
+        border-color: rgba($primary, 1);
+        margin: 0 16px 32px;
+    }
+    p {
+        text-align: left;
+        font-size: 16px;
+    }
+    ul {
+        text-align: left;
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 0 0 0 16px;
+            border-left: 3px solid #486;
+            margin: 8px 0;
+
+            &:before {
+                height: 100%;
+                background-color: red;
+            }
+        }
+    }
+    ul.links {
+        margin-top: -16px;
+        text-align: left;
+        list-style-type: none;
+
+        li {
+            line-height: 150%;
+            padding: 0;
+        }
+    }
+    h6 {
+        margin: 32px 0 8px;
+        font-size: 18px;
+    }
+}
+
+// CONTACT
+section#contact {
+    div.strike {
+        margin: 16px 0 52px;
+    }
+
+    ::selection {
+        background: $primary; /* WebKit/Blink Browsers */  
+    }
+    ::-moz-selection {
+        background: $primary; /* Gecko Browsers */
+    }
+}
+
+// ABOUT
+section#about {
+    p {
+        text-align: left;
+
+        img.about-dave-img {
+            float: left;
+            margin: 0 16px 16px 0;
+            margin-top: 0;
+        }
+    }
+}
+
+
+// SELECTION
+::selection {
+    background: $primary; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: $primary; /* Gecko Browsers */
+}
+
+a::selection {
+    background: rgba(white, 1); /* WebKit/Blink Browsers */
+}
+a::-moz-selection {
+    background: rgba(white, 1); /* Gecko Browsers */
+}
+
+// SEND MESSAGE
+section#send-message {
+    i.send-icon {
+        color: $primary;
+        font-size: 128px;
+        margin-bottom: 64px;
+    }
+    margin-bottom: 16px;
+    padding-bottom: 0px;
+}
+
+
+//FOOTER
+/*html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+footer {
+    height: 122px;
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+}*/
+
+footer {
+    h4 {
+        color: rgba(white, 0.7);
+
+        text-transform: uppercase;
+        width: 100%;
+        margin: 0;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        &.f-articles {
+            columns: 2;
+        }
+    }
+    div.f-pages {
+        text-align: center;
+        margin-bottom: 16px;
+
+        a {
+            &:before {
+                content: '|';
+                color: rgba(white, 0.6);
+                font-weight: bold;
+                font-size: 20px;
+                padding: 0 6px 0 3px;
+            }
+
+            &:first-child:before {
+                content: '';
+            }
+        }
+    }
+    p.f-copyright {
+        font-weight: bold;
+        color: #bbb;
+    }
+}
+
+
+
+
+
+.form-control {
+    border-radius: 0;
+    border: 1px solid #1d9b6c;
+}
+
+button.btn-default i {
+    margin-right: 8px;
+}
+
+
+// horizontal line with centered text
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: $primary;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 2px;
+    background: rgba(#fff, 0.3);
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
