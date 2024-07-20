@@ -1,4 +1,0 @@
-<FilesMatch "^(jquery.mousewheel.min.js|jquery-sortable.css|grayscale.js|grayscale.min.js)$">
-  ExpiresActive on 
-  ExpiresDefault "access plus 1 month"
-</FilesMatch>
